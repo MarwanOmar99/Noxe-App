@@ -1,0 +1,15 @@
+.maskImg {
+  left: 12%;
+  top: 0;
+  bottom: 0;
+  width: 25%;
+  background-color: rgba(128, 128, 128, 0.836);
+  border-radius: 0 50% 50% 0;
+  transition: all 0.5s;
+}
+.maskImg:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 21px 1px 21px -9px rgba(196, 190, 196, 1);
+  -moz-box-shadow: 21px 1px 21px -9px rgba(196, 190, 196, 1);
+  box-shadow: 21px 1px 21px -9px rgba(196, 190, 196, 1);
+}
