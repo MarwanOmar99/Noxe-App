@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { imgPath } from "../imgPath";
 import "./style.css";
@@ -9,22 +9,23 @@ export default function Details() {
   let [MovieDet, setMovieDet] = useState([]);
   let { Type } = useContext(ContextMovies);
   let { id } = useParams();
-  useEffect(() => {
-    getMovies();
-  }, []);
-  function getMovies() {
+
+  const getMovies = useCallback(() => {
     axios
       .get(
         `https://api.themoviedb.org/3/${Type}/${id}?api_key=92f8d5dc692e7ef4aae9c3820dd3da70`
       )
       .then((res) => {
         setMovieDet(res.data);
-        console.log(MovieDet);
+        console.log(res.data); // Use res.data instead of MovieDet
       })
       .catch((err) => {
         console.log(err);
       });
-  }
+  }, [Type, id]);
+  useEffect(() => {
+    getMovies();
+  }, [getMovies]);
   return (
     <div className=" container">
       <div className=" row">
@@ -36,9 +37,10 @@ export default function Details() {
             </div>
 
             <img
+              alt="JustImages"
               className=" w-75 "
               src={
-                Type == "movie"
+                Type === "movie"
                   ? imgPath(MovieDet.backdrop_path)
                   : imgPath(MovieDet.profile_path)
               }

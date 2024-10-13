@@ -1,10 +1,8 @@
-import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import "./style.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import { imgPath } from "../imgPath";
 import MoviesCard from "./componantes/MovieCard";
 import PeopleCard from "./componantes/PeopleCard";
 import TvCard from "./componantes/TvCard";

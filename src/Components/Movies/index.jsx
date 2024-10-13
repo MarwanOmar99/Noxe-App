@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import MoviesCard from "../Home/componantes/MovieCard";
 import { ContextMovies } from "../store";
 import Loading from "../Home/componantes/Loading";

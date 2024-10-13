@@ -1,5 +1,4 @@
-import axios, { Axios } from "axios";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { ContextMovies } from "../store";
 import PeopleCard from "../Home/componantes/PeopleCard";
 

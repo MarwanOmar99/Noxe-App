@@ -1,5 +1,4 @@
-import axios, { Axios } from "axios";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { ContextMovies } from "../store";
 
 export default function Tv() {
@@ -13,6 +12,7 @@ export default function Tv() {
               <img
                 className="w-100 mb-2"
                 src={`https://image.tmdb.org/t/p/w500/` + Tv.poster_path}
+                alt="JustImage"
               />
               <h6>{Tv.name}</h6>
             </div>

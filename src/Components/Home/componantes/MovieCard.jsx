@@ -9,7 +9,11 @@ export default function MoviesCard({ movies }) {
     <div key={movies.id} className=" col-lg-2 col-md-3 col-sm-4 my-2">
       <Link to={`/details/${movies.id}`} onClick={() => setType("movie")}>
         <div className="w-100">
-          <img className="w-100 mb-2" src={imgPath(movies.poster_path)} />
+          <img
+            className="w-100 mb-2"
+            src={imgPath(movies.poster_path)}
+            alt="JustImage"
+          />
           <h6 className=" text-center">{movies.title}</h6>
         </div>
       </Link>
